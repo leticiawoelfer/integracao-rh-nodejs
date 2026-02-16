@@ -11,14 +11,14 @@ const salvarUsuarios = async (usuarios) => {
         });
     });
 
-    let adicionados = 0;
-    let atualizados = 0;
+    let adicionados = []
+    let atualizados = [];
 
     usuarios.forEach(usuario => {
         if (usuariosExistentes.has(usuario.email)) {
-            atualizados++;
+            atualizados.push(usuario);
         } else {
-            adicionados++;
+            adicionados.push(usuario);
         }
     });
 
